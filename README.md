@@ -7,7 +7,7 @@
 - `index.html` - простая веб-страница с формой заявки.
 - `style.css` - стили страницы.
 - `script.js` - обработка отправки и очистки формы.
-- `tests/` - UI-тесты Selenium + pytest.
+- `tests/` - UI-тесты Selenium + pytest (Firefox).
 - `.github/workflows/ci.yml` - CI/CD pipeline для GitHub Actions.
 
 ## Локальный запуск тестов

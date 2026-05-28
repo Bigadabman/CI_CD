@@ -2,18 +2,19 @@
 
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options
 
 
 @pytest.fixture()
 def driver():
     options = Options()
-    options.add_argument("--headless=new")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=1280,900")
+    options.add_argument("-headless")
 
-    browser = webdriver.Chrome(options=options)
+    windows_firefox = Path("C:/Program Files/Mozilla Firefox/firefox.exe")
+    if windows_firefox.exists():
+        options.binary_location = str(windows_firefox)
+
+    browser = webdriver.Firefox(options=options)
     yield browser
     browser.quit()
 
